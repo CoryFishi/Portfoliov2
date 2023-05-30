@@ -1,0 +1,122 @@
+@import url('https://fonts.google.com/specimen/Poppins?query=poppins');
+body {
+    background-color: #131315;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    align-content: center;
+}
+footer a {
+    color: #f1f1f1;
+}
+#social-table-footer a:hover {
+    color: #5c5c5c;
+  }
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 105vh;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.5s;
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.projects {
+    display: flex;
+}
+
+.project:nth-child(2) {
+    transition-delay: 200ms;
+}
+.project:nth-child(3) {
+    transition-delay: 400ms;
+}
+.project:nth-child(4) {
+    transition-delay: 600ms;
+}
+
+.navbar {
+    background-color: #33333321;
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.navbar-child {
+    flex: 1;
+}
+::-webkit-scrollbar {
+    width: 1vh;
+    background-color: #33333321;
+}
+::-webkit-scrollbar-track {
+    background-color: #33333321;
+}
+   
+::-webkit-scrollbar-thumb {
+    background-color: #131315;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
+
+.menubtn {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-right: 13vh;
+    background-color: #fff;
+    border: 0 solid #e2e8f0;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+}
+.menubtn:hover {
+  background-color: #000000;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .menubtn {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+}
