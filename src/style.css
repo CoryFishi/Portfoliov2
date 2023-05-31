@@ -5,6 +5,9 @@ body {
     font-family: 'Poppins', sans-serif;
     padding: 0;
     margin: 0;
+    display: block;
+    place-items: center;
+    align-content: center;
 }
 
 footer {
@@ -42,14 +45,17 @@ section {
     }
 }
 
-.show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: middle;
+    justify-content: center;
 }
 
-.projects {
-    display: flex;
+.project img {
+    padding:.5vw;
+    width: 300px;
+    height: 300px;
 }
 
 .project:nth-child(2) {
@@ -62,11 +68,17 @@ section {
     transition-delay: 600ms;
 }
 
+.project button {
+    max-width: 150px;
+    text-align: center;
+}
+
 .navbar {
     background-color: #33333321;
     display: flex;
     position: fixed;
     top: 0;
+    height: 10%;
     width: 100%;
     padding-left: 3%;
     padding-right: 3%;
@@ -79,7 +91,7 @@ section {
     background-color: #33333321;
 }
 ::-webkit-scrollbar-track {
-    background-color: #33333321;
+    background-color: #64646421;
 }
    
 ::-webkit-scrollbar-thumb {
@@ -91,10 +103,10 @@ section {
     background: white;
 }
 
-.menubtn {
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-right: 13vh;
+button {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 5%;
     background-color: #fff;
     border: 0 solid #e2e8f0;
     border-radius: 1.5rem;
@@ -110,13 +122,71 @@ section {
     transition: all .1s cubic-bezier(.4, 0, .2, 1);
     box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
 }
-.menubtn:hover {
+button:hover {
   background-color: #000000;
   color: #fff;
 }
 @media (min-width: 768px) {
-  .menubtn {
+  button {
     font-size: 1.125rem;
     padding: 1rem 2rem;
   }
+}
+.sidepanel {
+    display: none;
+    overflow-y: hidden;
+}
+.card {
+    background-color: #33333321;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.233);
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    text-shadow: 1px 1px 1px black;
+    max-height: 60vh;
+    max-width: 30vh;
+    padding: 1%;
+    border-bottom-left-radius: 15%;
+}
+.name {
+    color: white;
+    font-size: 24px;
+}
+#social-table {
+    table-layout: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sidepanel {
+    border-bottom: 8px;
+    position: fixed;
+    z-index: 1;
+    top: 10%;
+    right: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: -40px;
+    transition: 0.5s;
+}
+.sidepanel a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidepanel a:hover {
+    color: #f1f1f1;
+}
+
+.menubtn-open {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
 }
