@@ -1,3 +1,4 @@
+/*Globals*/
 @import url('https://fonts.google.com/specimen/Poppins?query=poppins');
 body {
     background-color: #131315;
@@ -9,7 +10,6 @@ body {
     place-items: center;
     align-content: center;
 }
-
 footer {
     font-family: 'Poppins', sans-serif;
     padding: 0;
@@ -23,86 +23,19 @@ footer a {
 }
 #social-table-footer a:hover {
     color: #5c5c5c;
-  }
-
+}
+#social-table {
+    table-layout: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
 section {
     display: grid;
     place-items: center;
     align-content: center;
     min-height: 105vh;
 }
-
-.hidden {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1.5s;
-}
-
-@media(prefers-reduced-motion) {
-    .hidden {
-        transition: none;
-    }
-}
-
-#projects {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: middle;
-    justify-content: center;
-}
-
-.project img {
-    padding:.5vw;
-    width: 300px;
-    height: 300px;
-}
-
-.project:nth-child(2) {
-    transition-delay: 200ms;
-}
-.project:nth-child(3) {
-    transition-delay: 400ms;
-}
-.project:nth-child(4) {
-    transition-delay: 600ms;
-}
-
-.project button {
-    max-width: 150px;
-    text-align: center;
-}
-
-.navbar {
-    background-color: #33333321;
-    display: flex;
-    position: fixed;
-    top: 0;
-    height: 10%;
-    width: 100%;
-    padding-left: 3%;
-    padding-right: 3%;
-}
-.navbar-child {
-    flex: 1;
-}
-::-webkit-scrollbar {
-    width: 1vh;
-    background-color: #33333321;
-}
-::-webkit-scrollbar-track {
-    background-color: #64646421;
-}
-   
-::-webkit-scrollbar-thumb {
-    background-color: #131315;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: white;
-}
-
+/*Buttons*/
 button {
     margin-top: 1%;
     margin-bottom: 1%;
@@ -116,7 +49,6 @@ button {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
-    padding: 1rem 1.6rem;
     text-align: center;
     text-decoration: none #0d172a solid;
     transition: all .1s cubic-bezier(.4, 0, .2, 1);
@@ -131,6 +63,57 @@ button:hover {
     font-size: 1.125rem;
     padding: 1rem 2rem;
   }
+}
+/*Slide Transition 1/2*/
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.5s;
+}
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+/*Project Section*/
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: middle;
+    justify-content: center;
+}
+.project img {
+    padding:.5vw;
+    width: 300px;
+    height: 300px;
+}
+.project:nth-child(2) {
+    transition-delay: 200ms;
+}
+.project:nth-child(3) {
+    transition-delay: 400ms;
+}
+.project:nth-child(4) {
+    transition-delay: 600ms;
+}
+.project button {
+    max-width: 150px;
+    text-align: center;
+}
+/*Nav Bar*/
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 10%;
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    min-height: 80px;
+}
+.navbar-child {
+    flex: 1;
 }
 .sidepanel {
     display: none;
@@ -147,21 +130,13 @@ button:hover {
     max-width: 30vh;
     padding: 1%;
     border-bottom-left-radius: 15%;
-}
-.name {
-    color: white;
-    font-size: 24px;
-}
-#social-table {
-    table-layout: auto;
-    margin-left: auto;
-    margin-right: auto;
+    border-top-left-radius: 15%;
 }
 .sidepanel {
     border-bottom: 8px;
     position: fixed;
     z-index: 1;
-    top: 10%;
+    top: 11%;
     right: 0;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -178,13 +153,27 @@ button:hover {
 .sidepanel a:hover {
     color: #f1f1f1;
 }
-
 .menubtn-open {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
 }
-
+/*Scroll Bar*/
+::-webkit-scrollbar {
+    width: 1vh;
+    background-color: #33333321;
+}
+::-webkit-scrollbar-track {
+    background-color: #64646421;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #131315;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
+/*Slide Transition 2/2*/
 .show {
     opacity: 1;
     filter: blur(0);
