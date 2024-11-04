@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
-
-export default function Navbar({ toggleDarkMode, darkMode }) {
+export default function Navbar({ toggleDarkMode, darkMode, setShowCLIWindow }) {
   return (
-    <nav className="p-2 w-full select-none top-0">
+    <nav className="p-2 w-full select-none top-0 fixed">
       <div className="flex items-center justify-between text-black dark:text-white">
         <div className="flex items-center flex-shrink-0 text-2xl font-medium ml-5">
           Cory Fishburn
@@ -20,30 +18,30 @@ export default function Navbar({ toggleDarkMode, darkMode }) {
               }`}
             ></div>
           </div>
-          <Link
+          <button
             to="/"
             className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
           >
             About
-          </Link>
-          <Link
+          </button>
+          <button
             to="/"
             className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
           >
             Projects
-          </Link>
-          <Link
-            to="/"
+          </button>
+          <button
             className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
+            onClick={() => setShowCLIWindow((prev) => !prev)}
           >
             CLI
-          </Link>
-          <Link
+          </button>
+          <button
             to="/"
             className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
           >
-            Contact123
-          </Link>
+            Contact
+          </button>
         </div>
       </div>
     </nav>
