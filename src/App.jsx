@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useState, useEffect } from "react";
 import Home from "./pages/Home";
-import CLI from "./pages/CLI";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);

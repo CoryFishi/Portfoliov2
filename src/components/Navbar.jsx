@@ -35,19 +35,19 @@ export default function Navbar({
           </div>
           <button
             onClick={() => handleScrollToSection(aboutRef)}
-            className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
+            className="px-3 py-2 text-md font-mediums border-opacity-0 hover:border-opacity-100 border-b-blue-500 border-b-2"
           >
             About
           </button>
           <button
             onClick={() => handleScrollToSection(projectsRef)}
-            className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
+            className="px-3 py-2 text-md font-mediums border-opacity-0 hover:border-opacity-100 border-b-blue-500 border-b-2"
           >
             Projects
           </button>
           <button
             onClick={() => handleScrollToSection(contactRef)}
-            className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
+            className="px-3 py-2 text-md font-mediums border-opacity-0 hover:border-opacity-100 border-b-blue-500 border-b-2"
           >
             Contact
           </button>
