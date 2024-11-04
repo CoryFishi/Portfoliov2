@@ -46,17 +46,40 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
 
   const handleCommand = () => {
     let result;
-    if (input === "help") {
-      result = commands
-        .map((command) => `${command.name} - ${command.description}`)
-        .join("\n");
-    } else if (input === "clear") {
-      setOutput([]);
-      setInput("");
-      return;
-    } else {
-      result = `Command not recognized: ${input}`;
+    switch (input) {
+      case "help":
+        result = commands
+          .map((command) => `${command.name} - ${command.description}`)
+          .join("\n");
+        break;
+      case "clear":
+        setOutput([]);
+        setInput("");
+        return;
+        break;
+      case "whoami":
+        result = "visitor@cfishburn.dev";
+        break;
+      case "about":
+        result = "This is the about section!";
+        break;
+      case "projects":
+        result = "This is the projects section!";
+        break;
+      case "contact":
+        result = "This is the contact section!";
+        break;
+      case "destroy":
+        result = "This is the destroy section!";
+        break;
+      case "create":
+        result = "This is the create section!";
+        break;
+      default:
+        result = `Command not recognized: ${input}`;
+        break;
     }
+
     setOutput((prevOutput) => [
       ...prevOutput,
       { command: `visitor@cfishburn.dev:~$ ${input}`, result },

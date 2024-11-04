@@ -1,10 +1,25 @@
-export default function Navbar({ toggleDarkMode, darkMode, setShowCLIWindow }) {
+import { CgProfile } from "react-icons/cg";
+
+export default function Navbar({
+  toggleDarkMode,
+  darkMode,
+  handleScrollToSection,
+  homeRef,
+  aboutRef,
+  projectsRef,
+  contactRef,
+}) {
   return (
-    <nav className="p-2 w-full select-none top-0 fixed">
+    <nav className="p-2 w-full select-none top-0 fixed z-50">
       <div className="flex items-center justify-between text-black dark:text-white">
-        <div className="flex items-center flex-shrink-0 text-2xl font-medium ml-5">
-          Cory Fishburn
+        <div
+          className="flex items-center text-xl font-medium ml-5 text-center space-x-3 hover:cursor-pointer"
+          onClick={() => handleScrollToSection(homeRef)}
+        >
+          <CgProfile className="text-4xl" />
+          <span>CORY FISHBURN</span>
         </div>
+
         <div className="flex space-x-4 items-center mr-5">
           <div
             onClick={toggleDarkMode}
@@ -19,25 +34,19 @@ export default function Navbar({ toggleDarkMode, darkMode, setShowCLIWindow }) {
             ></div>
           </div>
           <button
-            to="/"
+            onClick={() => handleScrollToSection(aboutRef)}
             className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
           >
             About
           </button>
           <button
-            to="/"
+            onClick={() => handleScrollToSection(projectsRef)}
             className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
           >
             Projects
           </button>
           <button
-            className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
-            onClick={() => setShowCLIWindow((prev) => !prev)}
-          >
-            CLI
-          </button>
-          <button
-            to="/"
+            onClick={() => handleScrollToSection(contactRef)}
             className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
           >
             Contact
