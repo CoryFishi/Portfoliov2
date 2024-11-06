@@ -26,7 +26,7 @@ export default function AboutSection({
   return (
     <div
       ref={aboutRef}
-      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col font-roboto"
+      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col font-roboto dark:bg-slate-900"
     >
       <div>
         <h1 className="text-5xl border-b-2 mb-10">About Me</h1>
@@ -49,7 +49,7 @@ export default function AboutSection({
           </p>
           <div className="text-center mt-5">
             <button
-              className="rounded bg-neutral-300 hover:bg-neutral-400 p-2 my-10"
+              className="rounded bg-neutral-300 hover:bg-neutral-200 p-2 my-10 dark:bg-slate-800 dark:hover:bg-slate-500 "
               onClick={() => handleScrollToSection(contactRef)}
             >
               Contact Me

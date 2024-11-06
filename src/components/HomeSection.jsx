@@ -8,7 +8,7 @@ export default function HomeSection({
   return (
     <div
       ref={homeRef}
-      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col relative"
+      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col relative dark:bg-slate-900"
     >
       <div className="text-6xl font-bold mb-10">
         <h1>Hi! I'm Cory Fishburn</h1>

@@ -13,7 +13,6 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
   const [cursorVisible, setCursorVisible] = useState(true);
   const blackDivRef = useRef(null);
   const [isMax, setIsMax] = useState(false);
-
   const [modalDimensions, setModalDimensions] = useState({
     width: 600,
     height: 400,
@@ -28,12 +27,6 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
   const handleClose = () => {
     setShowCLIWindow(false);
   };
-
-  useEffect(() => {
-    if (blackDivRef.current) {
-      blackDivRef.current.scrollTop = blackDivRef.current.scrollHeight;
-    }
-  }, [input]);
 
   const commands = [
     { name: "help", description: "Displays the list of available commands." },
@@ -89,10 +82,16 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
     ]);
     setInput("");
   };
-
+  useEffect(() => {
+    if (blackDivRef.current) {
+      blackDivRef.current.scrollTop = blackDivRef.current.scrollHeight;
+    }
+  }, [input]);
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "Enter") {
+      if (e.key === "Escape") {
+        handleClose();
+      } else if (e.key === "Enter") {
         handleCommand();
       } else if (e.key === "Backspace") {
         setInput((prev) => prev.slice(0, -1));

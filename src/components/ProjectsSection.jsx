@@ -18,14 +18,14 @@ export default function ProjectsSection({ projectsRef }) {
   return (
     <div
       ref={projectsRef}
-      className="w-full flex flex-col items-center justify-center text-center bg-blue-50 font-roboto"
+      className="w-full flex flex-col items-center justify-center text-center bg-blue-50 font-roboto dark:bg-slate-900"
     >
       {/* Header */}
       <div>
         <h1 className="text-5xl mt-16 border-b-2 mb-3">My Projects</h1>
       </div>
-      {/* Select Screen */}
-      <div className="w-full flex flex-col h-screen">
+      {/* Select Projects */}
+      <div className="w-full hidden flex-col h-screen xl:flex">
         {/* Selected Focus Screen */}
         <div className="group w-full flex justify-center items-center p-2 h-1/2 mx-auto">
           <div className="group w-1/2 grid place-items-center rounded text-center relative">
@@ -122,26 +122,6 @@ export default function ProjectsSection({ projectsRef }) {
                 <p>JavaScript</p>
               </div>
             </div>
-            <div className="mt-2 flex gap-3 justify-center items-center mx-auto">
-              <button
-                className="px-3 flex items-center text-center w-fit gap-1 text-lg underline"
-                onClick={() =>
-                  window.open("https://propertymanager.netlify.app/", "_blank")
-                }
-              >
-                <TbPlayerRecordFilled className="text-red-500 animate-pulse" />
-                Live Site
-              </button>
-              <button
-                className=" px-3 flex items-center text-center w-fit gap-1 text-lg underline"
-                onClick={() =>
-                  window.open("https://github.com/CoryFishi/NewPMS", "_blank")
-                }
-              >
-                <IoLogoGithub className="text-black" />
-                GitHub
-              </button>
-            </div>
           </div>
           {/* Project 2 Option */}
           <div className="group hover:bg-gray-300 p-2 hover:scale-105 rounded transition duration-300 ease-in-out transform select-none hover:cursor-pointer">
@@ -171,26 +151,6 @@ export default function ProjectsSection({ projectsRef }) {
                 <IoLogoHtml5 className="text-orange-500" />
                 <p>HTML</p>
               </div>
-            </div>
-            <div className="mt-2 flex gap-3 justify-center items-center mx-auto">
-              <button
-                className="px-3 flex items-center text-center w-fit gap-1 text-lg underline"
-                onClick={() =>
-                  window.open("https://propertymanager.netlify.app/", "_blank")
-                }
-              >
-                <TbPlayerRecordFilled className="text-red-500 animate-pulse" />
-                Live Site
-              </button>
-              <button
-                className=" px-3 flex items-center text-center w-fit gap-1 text-lg underline"
-                onClick={() =>
-                  window.open("https://github.com/CoryFishi/NewPMS", "_blank")
-                }
-              >
-                <IoLogoGithub className="text-black" />
-                GitHub
-              </button>
             </div>
           </div>
           {/* Project 3 Option */}
@@ -222,26 +182,6 @@ export default function ProjectsSection({ projectsRef }) {
                 <p>HTML</p>
               </div>
             </div>
-            <div className="mt-2 flex gap-3 justify-center items-center mx-auto">
-              <button
-                className="px-3 flex items-center text-center w-fit gap-1 text-lg underline"
-                onClick={() =>
-                  window.open("https://propertymanager.netlify.app/", "_blank")
-                }
-              >
-                <TbPlayerRecordFilled className="text-red-500 animate-pulse" />
-                Live Site
-              </button>
-              <button
-                className=" px-3 flex items-center text-center w-fit gap-1 text-lg underline"
-                onClick={() =>
-                  window.open("https://github.com/CoryFishi/NewPMS", "_blank")
-                }
-              >
-                <IoLogoGithub className="text-black" />
-                GitHub
-              </button>
-            </div>
           </div>
           {/* Project 4 Option */}
           <div className="group hover:bg-gray-300 p-2 hover:scale-105 rounded transition duration-300 ease-in-out transform select-none hover:cursor-pointer">
@@ -268,17 +208,6 @@ export default function ProjectsSection({ projectsRef }) {
                 <SiGnubash className="text-black" />
                 <p>BASH</p>
               </div>
-            </div>
-            <div className="mt-2 flex gap-3 justify-center items-center mx-auto">
-              <button
-                className=" px-3 flex items-center text-center w-fit gap-1 text-lg underline"
-                onClick={() =>
-                  window.open("https://github.com/CoryFishi/NewPMS", "_blank")
-                }
-              >
-                <IoLogoGithub className="text-black" />
-                GitHub
-              </button>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ export default function Navbar({
   contactRef,
 }) {
   return (
-    <nav className="p-2 w-full select-none top-0 fixed z-50 bg-slate-50">
+    <nav className="p-2 w-full select-none top-0 fixed z-50 bg-slate-50 dark:bg-slate-950">
       <div className="flex items-center justify-between text-black dark:text-white">
         <div
           className="flex items-center text-xl font-medium ml-5 text-center space-x-3 hover:cursor-pointer"

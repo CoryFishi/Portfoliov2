@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   // Check localStorage for dark mode preference on initial render
   useEffect(() => {
