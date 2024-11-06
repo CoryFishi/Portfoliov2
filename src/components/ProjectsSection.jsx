@@ -18,7 +18,7 @@ export default function ProjectsSection({ projectsRef }) {
   return (
     <div
       ref={projectsRef}
-      className="w-full flex flex-col items-center justify-center text-center bg-blue-50 font-roboto dark:bg-slate-900"
+      className="w-full flex flex-col items-center justify-center text-center bg-blue-50 font-roboto dark:bg-slate-900 overflow-x-hidden"
     >
       {/* Header */}
       <div>

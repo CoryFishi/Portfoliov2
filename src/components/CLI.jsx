@@ -139,11 +139,11 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
           modalDimensions.screenWidth,
           modalDimensions.screenHeight,
         ]}
-        className="fixed inset-0 z-50"
+        className="fixed inset-0 z-50 overflow-x-hidden"
         resizeHandles={isMax ? [] : ["e", "s", "se", "w"]}
       >
         <div
-          className={`h-full w-full px-2 pb-2 rounded bg-slate-500 bg-opacity-50 flex flex-col ${
+          className={`h-full w-full px-2 pb-2 rounded bg-slate-500 bg-opacity-50 flex flex-col overflow-x-hidden ${
             isMax ? "bg-opacity-100 bg-neutral-500 rounded-none" : ""
           }`}
         >

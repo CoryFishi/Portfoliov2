@@ -8,7 +8,7 @@ export default function HomeSection({
   return (
     <div
       ref={homeRef}
-      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col relative dark:bg-slate-900"
+      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col font-roboto dark:bg-slate-900 overflow-x-hidden"
     >
       <div className="text-6xl font-bold mb-10">
         <h1>Hi! I'm Cory Fishburn</h1>
@@ -21,7 +21,7 @@ export default function HomeSection({
       </div>
 
       <div
-        className="absolute bottom-10 animate-bounce text-4xl text-gray-700"
+        className="animate-bounce text-4xl text-gray-700 hover:cursor-pointer"
         onClick={() => handleScrollToSection(aboutRef)}
       >
         <AiOutlineArrowDown />

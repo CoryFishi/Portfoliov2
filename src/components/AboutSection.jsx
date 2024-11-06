@@ -15,7 +15,7 @@ import {
   SiGnubash,
   SiPowershell,
 } from "react-icons/si";
-import { FaGitAlt, FaTerminal, FaJava } from "react-icons/fa6";
+import { FaGitAlt, FaJava } from "react-icons/fa6";
 import { FcLinux } from "react-icons/fc";
 
 export default function AboutSection({
@@ -26,7 +26,7 @@ export default function AboutSection({
   return (
     <div
       ref={aboutRef}
-      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col font-roboto dark:bg-slate-900"
+      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col font-roboto dark:bg-slate-900 overflow-x-hidden"
     >
       <div>
         <h1 className="text-5xl border-b-2 mb-10">About Me</h1>

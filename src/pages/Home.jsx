@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import CLI from "../components/CLI";
-import { AiOutlineArrowDown } from "react-icons/ai";
 import Sidebar from "../components/Sidebar";
 import HomeSection from "../components/HomeSection";
 import AboutSection from "../components/AboutSection";
@@ -23,7 +22,7 @@ export default function Home({ toggleDarkMode, darkMode }) {
   };
 
   return (
-    <div className="bg-white text-black dark:text-white dark:bg-black w-screen h-screen overflow-x-hidden">
+    <div className="bg-white text-black dark:text-white dark:bg-black w-screen h-screen overflow-x-hidden custom-scrollbar z-10">
       <Navbar
         toggleDarkMode={toggleDarkMode}
         darkMode={darkMode}
@@ -40,7 +39,7 @@ export default function Home({ toggleDarkMode, darkMode }) {
           showCLIWindow={showCLIWindow}
         />
       )}
-      <Sidebar setShowCLIWindow={setShowCLIWindow} />
+
       <HomeSection
         homeRef={homeRef}
         handleScrollToSection={handleScrollToSection}
@@ -53,6 +52,7 @@ export default function Home({ toggleDarkMode, darkMode }) {
       />
       <ProjectsSection projectsRef={projectsRef} />
       <ContactSection contactRef={contactRef} />
+      <Sidebar setShowCLIWindow={setShowCLIWindow} />
     </div>
   );
 }
