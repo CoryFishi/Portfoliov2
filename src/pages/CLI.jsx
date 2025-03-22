@@ -61,7 +61,18 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
         result = "visitor@cfishburn.dev";
         break;
       case "about":
-        result = "This is the about section!";
+        result = `
+        .
+        Hi! My name is Cory Fishburn.
+        Based out of Phoenix, Arizona.
+        I'm an engineer focused on making automation efforts to do things.
+.
+        The tech that I work with is...
+        + React       + JavaScript       + NodeJS       + JavaScript
+        + React       + JavaScript       + NodeJS       + JavaScript
+        + React       + JavaScript       + NodeJS       + JavaScript
+        + React       + JavaScript       + NodeJS       + JavaScript
+        + React       + JavaScript       + NodeJS       + JavaScript`;
         break;
       case "projects":
         result = "This is the projects section!";
