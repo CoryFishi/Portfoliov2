@@ -56,7 +56,6 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
         result = "visitor@cfishburn.dev";
         break;
       case "about":
-<<<<<<< HEAD:src/pages/CLI.jsx
         result = `
         .
         Hi! My name is Cory Fishburn.
@@ -69,10 +68,6 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
         + React       + JavaScript       + NodeJS       + JavaScript
         + React       + JavaScript       + NodeJS       + JavaScript
         + React       + JavaScript       + NodeJS       + JavaScript`;
-=======
-        result =
-          "Hi! I'm Cory Fishburn \nI’m an automation developer focused on building efficient, scalable applications that drive product success and streamline processes.";
->>>>>>> a8df7c088b6967baf05777d05f32681ba180e77a:src/components/CLI.jsx
         break;
       case "projects":
         result = "This is the projects section!";
