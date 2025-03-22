@@ -1,9 +1,11 @@
 import Navbar from "../components/Navbar";
-import { useState, useRef, useEffect } from "react";
-import CLI from "./CLI";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiCommandLine } from "react-icons/hi2";
-import { AiOutlineArrowDown } from "react-icons/ai";
+import { useState, useRef } from "react";
+import CLI from "../components/CLI";
+import Sidebar from "../components/Sidebar";
+import HomeSection from "../components/HomeSection";
+import AboutSection from "../components/AboutSection";
+import ProjectsSection from "../components/ProjectsSection";
+import ContactSection from "../components/ContactSection";
 
 export default function Home({ toggleDarkMode, darkMode }) {
   const [showCLIWindow, setShowCLIWindow] = useState(false);
@@ -20,7 +22,7 @@ export default function Home({ toggleDarkMode, darkMode }) {
   };
 
   return (
-    <div className="bg-white text-black dark:text-white dark:bg-black w-screen h-screen overflow-x-hidden">
+    <div className="bg-white text-black dark:text-white dark:bg-black w-screen h-screen overflow-x-hidden custom-scrollbar z-10">
       <Navbar
         toggleDarkMode={toggleDarkMode}
         darkMode={darkMode}
@@ -37,58 +39,20 @@ export default function Home({ toggleDarkMode, darkMode }) {
           showCLIWindow={showCLIWindow}
         />
       )}
-      <div className="fixed top-2/3 left-0 bg-opacity-50 select-none text-4xl rounded-r m-1 z-50">
-        <FaGithub
-          className="cursor-pointer p-1 hover:transition hover:ease-in-out hover:duration-500 hover:bg-slate-500 rounded-2xl"
-          onClick={() => window.open("https://github.com/coryfishi", "_blank")}
-        />
-        <FaLinkedin
-          className="cursor-pointer p-1 hover:transition hover:ease-in-out hover:duration-500 hover:bg-slate-500 rounded-2xl"
-          onClick={() =>
-            window.open("https://linkedin.com/in/CoryFishburn", "_blank")
-          }
-        />
-        <HiCommandLine
-          className="cursor-pointer p-1 hover:transition hover:ease-in-out hover:duration-500 hover:bg-slate-500 rounded-2xl"
-          onClick={() => setShowCLIWindow((prev) => !prev)}
-        />
-      </div>
-      <div
-        ref={homeRef}
-        className="w-full h-full flex items-center justify-center text-center bg-yellow-100 flex-col relative"
-      >
-        <div className="text-6xl font-bold mb-10">
-          <h1>Hi! I'm Cory Fishburn</h1>
-        </div>
-        <div className="text-xl mb-10 max-w-[900px] mx-3">
-          <p>
-            I’m an automation developer focused on building efficient, scalable
-            applications that drive product success and streamline processes.
-          </p>
-        </div>
 
-        <div className="absolute bottom-10 animate-bounce text-4xl text-gray-700">
-          <AiOutlineArrowDown />
-        </div>
-      </div>
-      <div
-        ref={aboutRef}
-        className="w-full h-full flex items-center justify-center text-center bg-red-100 flex-col"
-      >
-        About
-      </div>
-      <div
-        ref={projectsRef}
-        className="w-full h-full flex items-center justify-center text-center bg-blue-100"
-      >
-        Projects
-      </div>
-      <div
-        ref={contactRef}
-        className="w-full h-full flex items-center justify-center text-center bg-green-100"
-      >
-        Contact
-      </div>
+      <HomeSection
+        homeRef={homeRef}
+        handleScrollToSection={handleScrollToSection}
+        aboutRef={aboutRef}
+      />
+      <AboutSection
+        aboutRef={aboutRef}
+        handleScrollToSection={handleScrollToSection}
+        contactRef={contactRef}
+      />
+      <ProjectsSection projectsRef={projectsRef} />
+      <ContactSection contactRef={contactRef} />
+      <Sidebar setShowCLIWindow={setShowCLIWindow} />
     </div>
   );
 }

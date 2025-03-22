@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Draggable from "react-draggable";
 import { ResizableBox } from "react-resizable";
 import { FaRegWindowMaximize, FaRegWindowMinimize } from "react-icons/fa6";
+import { FaWindowRestore } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { VscTerminalCmd } from "react-icons/vsc";
 import "react-resizable/css/styles.css";
@@ -11,27 +12,21 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
   const [output, setOutput] = useState([]);
   const [cursorVisible, setCursorVisible] = useState(true);
   const blackDivRef = useRef(null);
-  const [screenDimensions, setScreenDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+  const [isMax, setIsMax] = useState(false);
+  const [modalDimensions, setModalDimensions] = useState({
+    width: 600,
+    height: 400,
+    screenWidth: window.innerWidth,
+    screenHeight: window.innerHeight,
+    defaultX: window.innerWidth / 2 - 600 / 2,
+    defaultY: window.innerHeight / 2 - 400 / 2,
+    minWidth: 400,
+    minHeight: 200,
   });
 
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (blackDivRef.current) {
-      blackDivRef.current.scrollTop = blackDivRef.current.scrollHeight;
-    }
-  }, [input]);
+  const handleClose = () => {
+    setShowCLIWindow(false);
+  };
 
   const commands = [
     { name: "help", description: "Displays the list of available commands." },
@@ -61,6 +56,7 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
         result = "visitor@cfishburn.dev";
         break;
       case "about":
+<<<<<<< HEAD:src/pages/CLI.jsx
         result = `
         .
         Hi! My name is Cory Fishburn.
@@ -73,6 +69,10 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
         + React       + JavaScript       + NodeJS       + JavaScript
         + React       + JavaScript       + NodeJS       + JavaScript
         + React       + JavaScript       + NodeJS       + JavaScript`;
+=======
+        result =
+          "Hi! I'm Cory Fishburn \nI’m an automation developer focused on building efficient, scalable applications that drive product success and streamline processes.";
+>>>>>>> a8df7c088b6967baf05777d05f32681ba180e77a:src/components/CLI.jsx
         break;
       case "projects":
         result = "This is the projects section!";
@@ -97,10 +97,16 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
     ]);
     setInput("");
   };
-
+  useEffect(() => {
+    if (blackDivRef.current) {
+      blackDivRef.current.scrollTop = blackDivRef.current.scrollHeight;
+    }
+  }, [input]);
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "Enter") {
+      if (e.key === "Escape") {
+        handleClose();
+      } else if (e.key === "Enter") {
         handleCommand();
       } else if (e.key === "Backspace") {
         setInput((prev) => prev.slice(0, -1));
@@ -114,13 +120,20 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
   }, [input]);
 
   useEffect(() => {
+    const handleResize = () => {
+      setScreenDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => setCursorVisible((v) => !v), 500);
     return () => clearInterval(interval);
   }, []);
-
-  const handleClose = () => {
-    setShowCLIWindow(false);
-  };
 
   if (!showCLIWindow) return null;
 
@@ -128,18 +141,27 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
     <Draggable
       handle=".drag-handle"
       defaultPosition={{
-        x: screen.availWidth / 2 - 300,
-        y: screen.availHeight / 2 - 200,
+        x: modalDimensions.defaultX,
+        y: modalDimensions.defaultY,
       }}
+      position={isMax ? { x: 0, y: 0 } : undefined}
     >
       <ResizableBox
-        width={600}
-        height={400}
-        minConstraints={[400, 200]}
-        maxConstraints={[screenDimensions.width, screenDimensions.height]}
-        className="fixed inset-0 z-50"
+        width={isMax ? modalDimensions.screenWidth : modalDimensions.width}
+        height={isMax ? modalDimensions.screenHeight : modalDimensions.height}
+        minConstraints={[modalDimensions.minWidth, modalDimensions.minHeight]}
+        maxConstraints={[
+          modalDimensions.screenWidth,
+          modalDimensions.screenHeight,
+        ]}
+        className="fixed inset-0 z-50 overflow-x-hidden"
+        resizeHandles={isMax ? [] : ["e", "s", "se", "w"]}
       >
-        <div className="h-full w-full px-2 pb-2 rounded bg-slate-500 bg-opacity-50 flex flex-col">
+        <div
+          className={`h-full w-full px-2 pb-2 rounded bg-slate-500 bg-opacity-50 flex flex-col overflow-x-hidden ${
+            isMax ? "bg-opacity-100 bg-neutral-500 rounded-none" : ""
+          }`}
+        >
           <div className="flex h-5 cursor-move select-none justify-between mb-1 drag-handle">
             <div className="h-full flex items-center justify-center text-center m-0.5 dark:text-white">
               <VscTerminalCmd className="text-lg" />
@@ -148,11 +170,17 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
               </p>
             </div>
             <div>
-              <button className="px-2 h-full hover:bg-slate-300 hover:transition hover:ease-in-out hover:duration-300 dark:text-white">
+              <button
+                className="px-2 h-full hover:bg-slate-300 hover:transition hover:ease-in-out hover:duration-300 dark:text-white"
+                onClick={handleClose}
+              >
                 <FaRegWindowMinimize />
               </button>
-              <button className="px-2 h-full hover:bg-slate-300 hover:transition hover:ease-in-out hover:duration-300 dark:text-white">
-                <FaRegWindowMaximize />
+              <button
+                className="px-2 h-full hover:bg-slate-300 hover:transition hover:ease-in-out hover:duration-300 dark:text-white"
+                onClick={() => setIsMax((prev) => !prev)}
+              >
+                {isMax ? <FaWindowRestore /> : <FaRegWindowMaximize />}
               </button>
               <button
                 className="bg-red-400 px-3 h-full hover:bg-red-500 hover:transition hover:ease-in-out hover:duration-300 bg-opacity-80 dark:text-white"

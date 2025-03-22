@@ -10,7 +10,7 @@ export default function Navbar({
   contactRef,
 }) {
   return (
-    <nav className="p-2 w-full select-none top-0 fixed z-50">
+    <nav className="p-2 w-full select-none top-0 fixed z-50 bg-slate-50 dark:bg-slate-950 overflow-x-hidden">
       <div className="flex items-center justify-between text-black dark:text-white">
         <div
           className="flex items-center text-xl font-medium ml-5 text-center space-x-3 hover:cursor-pointer"
@@ -35,19 +35,19 @@ export default function Navbar({
           </div>
           <button
             onClick={() => handleScrollToSection(aboutRef)}
-            className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
+            className="px-3 py-2 text-md font-mediums border-opacity-0 hover:border-opacity-100 border-b-blue-500 border-b-2"
           >
             About
           </button>
           <button
             onClick={() => handleScrollToSection(projectsRef)}
-            className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
+            className="px-3 py-2 text-md font-mediums border-opacity-0 hover:border-opacity-100 border-b-blue-500 border-b-2"
           >
             Projects
           </button>
           <button
             onClick={() => handleScrollToSection(contactRef)}
-            className="hover:bg-slate-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-md font-mediums"
+            className="px-3 py-2 text-md font-mediums border-opacity-0 hover:border-opacity-100 border-b-blue-500 border-b-2"
           >
             Contact
           </button>

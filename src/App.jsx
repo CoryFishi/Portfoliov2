@@ -2,16 +2,18 @@ import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useState, useEffect } from "react";
 import Home from "./pages/Home";
-import CLI from "./pages/CLI";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   // Check localStorage for dark mode preference on initial render
   useEffect(() => {
     const storedPreference = localStorage.getItem("darkMode");
-    if (storedPreference === "true") {
+    if (storedPreference === "false") {
+      setDarkMode(false);
+    } else {
       setDarkMode(true);
+
       document.documentElement.classList.add("dark");
     }
   }, []);
@@ -29,7 +31,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Toaster position="bottom-right" toastOptions={{ duration: 2000 }} />
       <Routes>
         <Route
@@ -37,7 +39,7 @@ function App() {
           element={<Home toggleDarkMode={toggleDarkMode} darkMode={darkMode} />}
         />
       </Routes>
-    </>
+    </div>
   );
 }
 
