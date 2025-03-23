@@ -22,7 +22,7 @@ export default function Home({ toggleDarkMode, darkMode }) {
   };
 
   return (
-    <div className="bg-white text-black dark:text-white dark:bg-black w-screen h-screen overflow-x-hidden custom-scrollbar z-10">
+    <div className="bg-white text-black dark:text-white dark:bg-zinc-900 w-screen h-screen overflow-x-hidden custom-scrollbar z-10">
       <Navbar
         toggleDarkMode={toggleDarkMode}
         darkMode={darkMode}
@@ -39,7 +39,6 @@ export default function Home({ toggleDarkMode, darkMode }) {
           showCLIWindow={showCLIWindow}
         />
       )}
-
       <HomeSection
         homeRef={homeRef}
         handleScrollToSection={handleScrollToSection}

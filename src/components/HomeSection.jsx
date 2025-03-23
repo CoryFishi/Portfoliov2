@@ -8,20 +8,20 @@ export default function HomeSection({
   return (
     <div
       ref={homeRef}
-      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col font-roboto dark:bg-slate-900 overflow-x-hidden"
+      className="relative w-full h-full flex items-center justify-center text-center flex-col font-roboto overflow-x-hidden bg-cover bg-center"
     >
       <div className="text-6xl font-bold mb-10">
         <h1>Hi! I'm Cory Fishburn</h1>
       </div>
-      <div className="text-xl mb-10 max-w-[900px] mx-3">
+      <div className="text-xl mb-10 max-w-[1000px] mx-3">
         <p>
-          I’m an automation engineer focused on building efficient, scalable
-          applications that drive product success and streamline processes.
+          I'm an automation engineer specializing in streamlining workflows,
+          building scalable systems, and developing custom tools to enhance
+          efficiency and productivity across software and hardware environments.
         </p>
       </div>
-
       <div
-        className="animate-bounce text-4xl text-gray-700 hover:cursor-pointer"
+        className="animate-bounce text-4xl text-gray-700 dark:text-white hover:cursor-pointer"
         onClick={() => handleScrollToSection(aboutRef)}
       >
         <AiOutlineArrowDown />

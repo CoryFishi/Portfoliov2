@@ -10,7 +10,7 @@ export default function Navbar({
   contactRef,
 }) {
   return (
-    <nav className="p-2 w-full select-none top-0 fixed z-50 bg-slate-50 dark:bg-slate-950 overflow-x-hidden">
+    <nav className="p-2 w-full select-none sticky top-0 z-50 bg-zinc-100 dark:bg-zinc-900 border-b dark:border-zinc-700">
       <div className="flex items-center justify-between text-black dark:text-white">
         <div
           className="flex items-center text-xl font-medium ml-5 text-center space-x-3 hover:cursor-pointer"
@@ -24,7 +24,7 @@ export default function Navbar({
           <div
             onClick={toggleDarkMode}
             className={`w-7 h-4 flex items-center rounded-full p-1 cursor-pointer ${
-              darkMode ? "bg-blue-600" : "bg-gray-300"
+              darkMode ? "bg-blue-600" : "bg-zinc-300"
             }`}
           >
             <div

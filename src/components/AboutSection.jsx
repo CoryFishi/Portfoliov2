@@ -26,7 +26,7 @@ export default function AboutSection({
   return (
     <div
       ref={aboutRef}
-      className="w-full h-full flex items-center justify-center text-center bg-blue-50 flex-col font-roboto dark:bg-slate-900 overflow-x-hidden"
+      className="w-full h-full flex items-center justify-center text-center flex-col font-robot overflow-x-hidden"
     >
       <div>
         <h1 className="text-5xl border-b-2 mb-10">About Me</h1>
