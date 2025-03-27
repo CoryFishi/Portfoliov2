@@ -43,6 +43,7 @@ export default function Home({ toggleDarkMode, darkMode }) {
         homeRef={homeRef}
         handleScrollToSection={handleScrollToSection}
         aboutRef={aboutRef}
+        contactRef={contactRef}
       />
       <AboutSection
         aboutRef={aboutRef}

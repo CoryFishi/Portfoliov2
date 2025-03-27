@@ -10,21 +10,23 @@ export default function Navbar({
   contactRef,
 }) {
   return (
-    <nav className="p-2 w-full select-none sticky top-0 z-50 bg-zinc-100 dark:bg-zinc-900 border-b dark:border-zinc-700">
-      <div className="flex items-center justify-between text-black dark:text-white">
+    <nav className="p-2 w-full select-none sticky top-0 z-50 bg-white dark:bg-zinc-900 shadow-md shadow-zinc-100 dark:shadow-zinc-900">
+      <div className="flex items-center justify-between text-black dark:text-zinc-500">
         <div
-          className="flex items-center text-xl font-medium ml-5 text-center space-x-3 hover:cursor-pointer"
+          className="flex flex-col text-xl font-medium ml-10 text-center hover:cursor-pointer"
           onClick={() => handleScrollToSection(homeRef)}
         >
-          <CgProfile className="text-4xl" />
-          <span>CORY FISHBURN</span>
+          <p>
+            <span className="dark:text-white">CORY FISHBURN</span>
+          </p>
+          <p className="border-t-4 w-10 rounded-xl border-teal-600"></p>
         </div>
 
         <div className="flex space-x-4 items-center mr-5">
           <div
             onClick={toggleDarkMode}
             className={`w-7 h-4 flex items-center rounded-full p-1 cursor-pointer ${
-              darkMode ? "bg-blue-600" : "bg-zinc-300"
+              darkMode ? "bg-teal-600" : "bg-zinc-300"
             }`}
           >
             <div
@@ -35,19 +37,19 @@ export default function Navbar({
           </div>
           <button
             onClick={() => handleScrollToSection(aboutRef)}
-            className="px-3 py-2 text-md font-mediums border-opacity-0 hover:border-opacity-100 border-b-blue-500 border-b-2"
+            className="px-3 py-2 text-md font-mediums dark:hover:text-white hover:scale-105 transition duration-300 ease-in-out transform"
           >
             About
           </button>
           <button
             onClick={() => handleScrollToSection(projectsRef)}
-            className="px-3 py-2 text-md font-mediums border-opacity-0 hover:border-opacity-100 border-b-blue-500 border-b-2"
+            className="px-3 py-2 text-md font-mediums dark:hover:text-white hover:scale-105 transition duration-300 ease-in-out transform"
           >
             Projects
           </button>
           <button
             onClick={() => handleScrollToSection(contactRef)}
-            className="px-3 py-2 text-md font-mediums border-opacity-0 hover:border-opacity-100 border-b-blue-500 border-b-2"
+            className="px-3 py-2 text-md font-mediums dark:hover:text-white hover:scale-105 transition duration-300 ease-in-out transform"
           >
             Contact
           </button>

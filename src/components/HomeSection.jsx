@@ -1,27 +1,46 @@
 import { AiOutlineArrowDown } from "react-icons/ai";
+import profile from "../assets/profile.jpg";
 
 export default function HomeSection({
   homeRef,
   aboutRef,
   handleScrollToSection,
+  contactRef,
 }) {
   return (
     <div
       ref={homeRef}
-      className="relative w-full h-full flex items-center justify-center text-center flex-col font-roboto overflow-x-hidden bg-cover bg-center"
+      className="relative w-full h-full flex items-center justify-center flex-col font-roboto overflow-x-hidden px-48"
     >
-      <div className="text-6xl font-bold mb-10">
-        <h1>Hi! I'm Cory Fishburn</h1>
+      <div className="flex justify-between items-center w-full pl-10">
+        {/* Text Section */}
+        <div className="max-w-[600px] text-left">
+          <div className="text-6xl font-bold mb-10">
+            <h1>Hi, I'm Cory.</h1>
+          </div>
+          <p className="max-w-[450px] text-3xl">
+            I'm an <span className="font-bold">automation engineer</span>,
+            aspiring entrepreneur, and{" "}
+            <span className="font-bold">Student</span>
+          </p>
+          <div className="w-full text-left mt-10">
+            <button
+              className="px-6 py-3 bg-teal-500 w-32 text-white rounded-lg hover:bg-blue-600"
+              onClick={() => handleScrollToSection(contactRef)}
+            >
+              Contact
+            </button>
+          </div>
+        </div>
+
+        {/* Image Section */}
+        <div className="w-1/2 flex justify-center">
+          <img src={profile} alt="Image of Cory Fishburn" className="w-96" />
+        </div>
       </div>
-      <div className="text-xl mb-10 max-w-[1000px] mx-3">
-        <p>
-          I'm an automation engineer specializing in streamlining workflows,
-          building scalable systems, and developing custom tools to enhance
-          efficiency and productivity across software and hardware environments.
-        </p>
-      </div>
+
       <div
-        className="animate-bounce text-4xl text-gray-700 dark:text-white hover:cursor-pointer"
+        className="animate-bounce mt-20 text-4xl text-gray-700 dark:text-white hover:cursor-pointer"
         onClick={() => handleScrollToSection(aboutRef)}
       >
         <AiOutlineArrowDown />
