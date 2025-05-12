@@ -5,20 +5,16 @@ import {
   IoLogoNodejs,
   IoLogoPython,
 } from "react-icons/io5";
-import {
-  SiExpress,
-  SiNextdotjs,
-  SiGnubash,
-  SiPowershell,
-} from "react-icons/si";
+import { SiExpress, SiNextdotjs } from "react-icons/si";
 import { FaGitAlt, FaJava, FaGolang } from "react-icons/fa6";
 import { FcLinux } from "react-icons/fc";
+import { TbBrandPowershell } from "react-icons/tb";
 
 export default function AboutSection({ aboutRef }) {
   return (
     <div
       ref={aboutRef}
-      className="w-full h-full flex justify-center flex-col font-robot overflow-x-hidden px-48"
+      className="w-full h-screen flex justify-center flex-col font-robot overflow-x-hidden px-48"
     >
       <div className="w-96">
         <h1 className="text-5xl font-bold mb-10 border-b border-teal-500">
@@ -79,7 +75,7 @@ export default function AboutSection({ aboutRef }) {
               <h2 className="text-2xl">Next JS</h2>
             </div>
             <div className="w-full justify-center items-center text-center flex flex-col hover:scale-105 rounded transition duration-300 ease-in-out transform select-none">
-              <SiPowershell className="text-blue-500 w-full" />
+              <TbBrandPowershell className="text-blue-500 w-full" />
               <h2 className="text-2xl">PowerShell</h2>
             </div>
             <div className="w-full justify-center items-center text-center flex flex-col hover:scale-105 rounded transition duration-300 ease-in-out transform select-none">

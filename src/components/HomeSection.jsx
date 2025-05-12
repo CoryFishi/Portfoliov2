@@ -10,7 +10,7 @@ export default function HomeSection({
   return (
     <div
       ref={homeRef}
-      className="relative w-full h-full flex items-center justify-center flex-col font-roboto overflow-x-hidden px-48"
+      className="relative w-full h-screen flex items-center justify-center flex-col font-roboto overflow-x-hidden px-48"
     >
       <div className="flex justify-between items-center w-full pl-10">
         {/* Text Section */}
@@ -25,7 +25,7 @@ export default function HomeSection({
           </p>
           <div className="w-full text-left mt-10">
             <button
-              className="px-6 py-3 bg-teal-500 w-32 text-white rounded-lg hover:bg-blue-600"
+              className="px-6 py-3 bg-teal-500 w-32 text-white rounded-lg hover:bg-teal-600 hover:scale-105 transition duration-300 ease-in-out"
               onClick={() => handleScrollToSection(contactRef)}
             >
               Contact
