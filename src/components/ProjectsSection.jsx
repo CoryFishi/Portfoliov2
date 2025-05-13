@@ -47,8 +47,8 @@ export default function ProjectsSection({
           icon: <IoLogoNodejs className="text-green-700" />,
         },
       ],
-      github: "123",
-      live: "123",
+      github: "https://github.com/CoryFishi/MockPMS",
+      live: "https://propertymanager-dev.netlify.app/",
     },
     {
       id: 2,
@@ -73,8 +73,8 @@ export default function ProjectsSection({
           icon: <IoLogoNodejs className="text-green-700" />,
         },
       ],
-      github: "123",
-      live: "123",
+      github: "https://github.com/CoryFishi/MockPMS",
+      live: "https://propertymanager-dev.netlify.app/",
     },
     {
       id: 3,
@@ -92,7 +92,7 @@ export default function ProjectsSection({
           icon: <SiExpress className="text-black dark:text-white" />,
         },
       ],
-      github: "123",
+      github: "https://github.com/CoryFishi/StockTrading",
     },
     {
       id: 4,
@@ -115,7 +115,7 @@ export default function ProjectsSection({
           icon: <DiLinux className="text-black dark:text-white" />,
         },
       ],
-      github: "123",
+      github: "https://github.com/CoryFishi/Filewatcher-OTA-Integration-Script",
     },
     {
       id: 5,
@@ -141,7 +141,6 @@ export default function ProjectsSection({
           icon: <SiExpress className="text-black dark:text-white" />,
         },
       ],
-      github: "123",
     },
     {
       id: 6,
@@ -163,7 +162,7 @@ export default function ProjectsSection({
         { name: "Wi-Fi", icon: <FcWiFiLogo className="text-blue-800" /> },
         { name: "Embeded", icon: <ImEmbed className="text-red-500" /> },
       ],
-      github: "123",
+      github: "https://github.com/CoryFishi/IoTDeviceFirmwareESP32/tree/main/",
     },
     {
       id: 7,
@@ -187,7 +186,7 @@ export default function ProjectsSection({
           icon: <DiLinux className="text-black dark:text-white" />,
         },
       ],
-      github: "123",
+      github: "https://github.com/CoryFishi/Palworld-Discord-Bot",
     },
   ]);
   const [selectedProject, setSelectedProject] = useState(projects[0]);
@@ -200,102 +199,100 @@ export default function ProjectsSection({
   return (
     <div
       ref={projectsRef}
-      className="w-full min-h-screen flex flex-col font-robot justify-center overflow-hidden pt-20 pb-10"
+      className="w-full min-h-screen flex flex-col font-roboto justify-center overflow-hidden pt-20 pb-10 px-6 md:px-20 lg:px-48"
     >
       {/* Header */}
-      <div className="ml-48 w-96">
-        <h1 className="text-5xl font-bold border-b border-teal-500">
+      <div className="w-full">
+        <h1 className="text-4xl md:text-5xl font-bold border-b border-teal-500">
           My Projects
         </h1>
       </div>
+
       {/* Selected Focus Screen */}
-      <div className="group w-full flex h-2/3 justify-center px-28 my-6">
-        <div className="relative w-full h-[400px] flex items-center justify-center overflow-hidden">
+      <div className="group w-full flex flex-col lg:flex-row h-auto justify-center gap-6 my-6">
+        {/* Image */}
+        <div className="relative w-full lg:w-1/2 h-64 md:h-[400px] flex items-center justify-center overflow-hidden">
           <img
             src={selectedProject.image}
             alt="Default Image"
-            className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-300 object-contain w-full h-full pl-20"
+            className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-300 object-contain w-full h-full"
           />
           <img
             src={selectedProject.hoverImage}
             alt="Hover Image"
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 object-contain w-full h-full pl-20"
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 object-contain w-full h-full"
           />
         </div>
-        <div className="h-full w-full flex flex-col justify-center">
-          <div className="w-full p-2 m-3 rounded text-left">
-            <h2 className="text-2xl font-bold">
-              {selectedProject.title || "Project Title"}
-            </h2>
-            <p className="text-xl max-w-[550px]">
-              {selectedProject.description ||
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
-            </p>
-            <div className="text-md mt-4 max-w-lg flex flex-wrap gap-3">
-              {selectedProject.technologies.map((tech, index) => (
-                <div
-                  className="bg-zinc-500/10 rounded-full px-3 flex items-center text-center w-fit gap-1"
-                  key={index}
-                >
-                  {tech.icon}
-                  <p>{tech.name}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-5 flex gap-3">
-              {selectedProject.github && (
-                <button
-                  className="px-3 flex items-center text-center w-fit gap-1 text-lg underline hover:bg-zinc-300 rounded-lg text-blue-500"
-                  onClick={() => window.open(selectedProject.github, "_blank")}
-                >
-                  <IoLogoGithub className="text-black" />
-                  GitHub
-                </button>
-              )}
-              {selectedProject.live && (
-                <button
-                  className="px-3 flex items-center text-center w-fit gap-1 text-lg underline hover:bg-zinc-300 rounded-lg text-blue-500"
-                  onClick={() => window.open(selectedProject.live, "_blank")}
-                >
-                  <TbPlayerRecordFilled className="text-red-600 animate-pulse" />
-                  Live Site
-                </button>
-              )}
-            </div>
+
+        {/* Description */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center">
+          <h2 className="text-2xl md:text-3xl font-bold">
+            {selectedProject.title}
+          </h2>
+          <p className="text-base md:text-xl mt-3">
+            {selectedProject.description}
+          </p>
+          <div className="text-sm md:text-md mt-4 flex flex-wrap gap-3">
+            {selectedProject.technologies.map((tech, index) => (
+              <div
+                className="bg-zinc-500/10 rounded-full px-3 flex items-center gap-1"
+                key={index}
+              >
+                {tech.icon}
+                <p>{tech.name}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 flex gap-3">
+            {selectedProject.github && (
+              <button
+                className="px-3 flex items-center gap-1 text-md underline hover:bg-zinc-300 rounded-lg text-blue-500"
+                onClick={() => window.open(selectedProject.github, "_blank")}
+              >
+                <IoLogoGithub className="text-black" /> GitHub
+              </button>
+            )}
+            {selectedProject.live && (
+              <button
+                className="px-3 flex items-center gap-1 text-md underline hover:bg-zinc-300 rounded-lg text-blue-500"
+                onClick={() => window.open(selectedProject.live, "_blank")}
+              >
+                <TbPlayerRecordFilled className="text-red-600 animate-pulse" />{" "}
+                Live Site
+              </button>
+            )}
           </div>
         </div>
       </div>
-      {/* Selection Options */}
-      <div
-        title="Click to see details"
-        className="w-full h-1/3 grid grid-cols-4 gap-5 rounded mt-2 text-center px-24"
-      >
+
+      {/* Project Thumbnails */}
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
         {projects.map((project) => (
           <div
-            onClick={() => handleProjectClick(project)}
             key={project.id}
-            className="group hover:bg-zinc-300 dark:hover:bg-zinc-800 p-2 hover:scale-105 rounded transition duration-300 ease-in-out transform select-none hover:cursor-pointer"
+            onClick={() => handleProjectClick(project)}
+            className="group hover:bg-zinc-300 dark:hover:bg-zinc-800 p-3 hover:scale-105 rounded transition duration-300 select-none cursor-pointer"
           >
-            <div className="relative w-full h-[150px] flex items-center justify-center overflow-hidden">
+            <div className="relative w-full h-40 flex items-center justify-center overflow-hidden">
               <img
                 src={project.image}
-                alt="Default Image"
+                alt="Default"
                 className="absolute opacity-100 transition-opacity duration-300 object-contain w-full h-full"
               />
               <img
                 src={project.hoverImage}
-                alt="Hover Image"
+                alt="Hover"
                 className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 object-contain w-full h-full"
               />
             </div>
-            <h2 className="font-bold m-1 text-xl">
-              {project.title || "Project Title"}
+            <h2 className="font-bold mt-2 text-lg text-center">
+              {project.title}
             </h2>
-            <div className="text-md mt-4 w-full flex flex-wrap gap-3 justify-center items-center mx-auto">
+            <div className="text-sm mt-3 flex flex-wrap gap-2 justify-center">
               {project.technologies.map((tech, index) => (
                 <div
                   key={index}
-                  className="bg-zinc-500/10 rounded-full px-3 flex items-center text-center w-fit gap-1"
+                  className="bg-zinc-500/10 rounded-full px-2 flex items-center gap-1"
                 >
                   {tech.icon}
                   <p>{tech.name}</p>
