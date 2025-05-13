@@ -149,7 +149,7 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
           modalDimensions.screenWidth,
           modalDimensions.screenHeight,
         ]}
-        className="fixed inset-0 z-50 overflow-x-hidden"
+        className="fixed inset-0 z-50 overflow-hidden"
         resizeHandles={isMax ? [] : ["e", "s", "se", "w"]}
       >
         <div
@@ -159,7 +159,7 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
         >
           <div className="flex h-5 cursor-move select-none justify-between mb-1 drag-handle">
             <div className="h-full flex items-center justify-center text-center m-0.5 dark:text-white">
-              <VscTerminalCmd className="text-lg" />
+              <VscTerminalCmd className="text-xl font-bold" />
               <p className="ml-2 text-xs text-center justify-center">
                 C:\WINDOWS\system32\cmd.exe
               </p>
@@ -178,7 +178,7 @@ export default function CLI({ showCLIWindow, setShowCLIWindow }) {
                 {isMax ? <FaWindowRestore /> : <FaRegWindowMaximize />}
               </button>
               <button
-                className="bg-red-400 px-3 h-full hover:bg-red-500 hover:transition hover:ease-in-out hover:duration-300 bg-opacity-80 dark:text-white"
+                className="bg-red-400 px-3 h-full hover:bg-red-500 hover:transition hover:ease-in-out hover:duration-300 bg-opacity-80 text-white"
                 onClick={handleClose}
               >
                 <IoClose />

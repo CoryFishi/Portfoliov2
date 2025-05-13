@@ -1,5 +1,3 @@
-import { CgProfile } from "react-icons/cg";
-
 export default function Navbar({
   toggleDarkMode,
   darkMode,

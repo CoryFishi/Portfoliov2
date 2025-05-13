@@ -21,7 +21,7 @@ export default function HomeSection({
           <p className="max-w-[450px] text-3xl">
             I'm an <span className="font-bold">automation engineer</span>,
             aspiring entrepreneur, and{" "}
-            <span className="font-bold">Student</span>
+            <span className="font-bold">Recent Graduate</span>
           </p>
           <div className="w-full text-left mt-10">
             <button

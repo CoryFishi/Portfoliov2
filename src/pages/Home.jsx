@@ -50,9 +50,12 @@ export default function Home({ toggleDarkMode, darkMode }) {
         handleScrollToSection={handleScrollToSection}
         contactRef={contactRef}
       />
-      <ProjectsSection projectsRef={projectsRef} />
+      <ProjectsSection
+        projectsRef={projectsRef}
+        handleScrollToSection={handleScrollToSection}
+      />
       <ContactSection contactRef={contactRef} />
-      <Sidebar setShowCLIWindow={setShowCLIWindow} />
+      {/* <Sidebar setShowCLIWindow={setShowCLIWindow} /> */}
     </div>
   );
 }

@@ -1,22 +1,28 @@
 import { useState } from "react";
-import { FaNodeJs, FaReact } from "react-icons/fa6";
+import { FaDiscord, FaDocker, FaNodeJs, FaReact } from "react-icons/fa6";
 import project1Static from "../assets/project_1_static.png?url";
 import project2Static from "../assets/project_2_static.png?url";
 import project3Static from "../assets/project_3_static.png?url";
 import project4Static from "../assets/project_4_static.png?url";
-
-import {
-  IoLogoJavascript,
-  IoLogoGithub,
-  IoLogoReact,
-  IoLogoNodejs,
-} from "react-icons/io5";
+import { IoLogoGithub, IoLogoReact, IoLogoNodejs } from "react-icons/io5";
 import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiElectron, SiExpress, SiGnubash, SiMqtt } from "react-icons/si";
+import {
+  SiArduino,
+  SiCplusplus,
+  SiElectron,
+  SiExpress,
+  SiGnubash,
+  SiMqtt,
+} from "react-icons/si";
 import { TbBrandPowershell, TbPlayerRecordFilled } from "react-icons/tb";
 import { DiLinux } from "react-icons/di";
+import { FcWiFiLogo } from "react-icons/fc";
+import { ImEmbed } from "react-icons/im";
 
-export default function ProjectsSection({ projectsRef }) {
+export default function ProjectsSection({
+  projectsRef,
+  handleScrollToSection,
+}) {
   const [projects, setProjects] = useState([
     {
       id: 1,
@@ -27,7 +33,7 @@ export default function ProjectsSection({ projectsRef }) {
       hoverImage:
         "https://camo.githubusercontent.com/f55bac5a5ea894c90eede9cd223cbaec2bedfaafdc684c3223ee3887c17cabef/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f76312e59326c6b505463354d4749334e6a45785a586c6e4e3239685a444d3063325a684d57566c59335578596d526e6232316f64545a774e7a4a6c626d356f626d5a6e6558493563695a6c634431324d563970626e526c636d35686246396e61575a66596e6c666157516d593351395a772f383378416b6952615a5457486a336d565a392f67697068792e676966",
       technologies: [
-        { name: "React", icon: <IoLogoReact className="text-lg" /> },
+        { name: "React", icon: <IoLogoReact className="text-blue-400" /> },
         {
           name: "Tailwind",
           icon: <RiTailwindCssFill className="text-blue-500" />,
@@ -53,7 +59,7 @@ export default function ProjectsSection({ projectsRef }) {
       hoverImage:
         "https://camo.githubusercontent.com/f55bac5a5ea894c90eede9cd223cbaec2bedfaafdc684c3223ee3887c17cabef/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f76312e59326c6b505463354d4749334e6a45785a586c6e4e3239685a444d3063325a684d57566c59335578596d526e6232316f64545a774e7a4a6c626d356f626d5a6e6558493563695a6c634431324d563970626e526c636d35686246396e61575a66596e6c666157516d593351395a772f383378416b6952615a5457486a336d565a392f67697068792e676966",
       technologies: [
-        { name: "React", icon: <IoLogoReact className="text-lg" /> },
+        { name: "React", icon: <IoLogoReact className="text-blue-400" /> },
         {
           name: "Tailwind",
           icon: <RiTailwindCssFill className="text-blue-500" />,
@@ -79,16 +85,20 @@ export default function ProjectsSection({ projectsRef }) {
       hoverImage:
         "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGF2ZGRweHd4eWMyZmpzeGtkbnk5MnIxeHV4aG5teXZ5ZjV2Ym1ieiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TIItRRDL4b3Z8g4nND/giphy.gif",
       technologies: [
-        { name: "React", icon: <FaReact className="text-blue-500" /> },
-        { name: "Node", icon: <FaNodeJs className="text-green-500" /> },
-        { name: "Express", icon: <SiExpress className="text-black" /> },
+        { name: "React", icon: <FaReact className="text-blue-400" /> },
+        { name: "Node", icon: <FaNodeJs className="text-green-700" /> },
+        {
+          name: "Express",
+          icon: <SiExpress className="text-black dark:text-white" />,
+        },
       ],
       github: "123",
     },
     {
       id: 4,
       title: "System Integrations",
-      description: "Automation and scripting with PowerShell, Bash, and Linux.",
+      description:
+        "Automation and scripting with PowerShell, Bash, and Linux. These integrations are to automate the connection between broker systems to the OpenTech APIs.",
       image: project4Static,
       hoverImage: project4Static,
       technologies: [
@@ -96,8 +106,14 @@ export default function ProjectsSection({ projectsRef }) {
           name: "PowerShell",
           icon: <TbBrandPowershell className="text-blue-500" />,
         },
-        { name: "Bash", icon: <SiGnubash className="text-black" /> },
-        { name: "Linux", icon: <DiLinux className="text-black" /> },
+        {
+          name: "Bash",
+          icon: <SiGnubash className="text-black dark:text-white" />,
+        },
+        {
+          name: "Linux",
+          icon: <DiLinux className="text-black dark:text-white" />,
+        },
       ],
       github: "123",
     },
@@ -111,16 +127,19 @@ export default function ProjectsSection({ projectsRef }) {
       technologies: [
         {
           name: "Wirepas",
-          icon: <SiMqtt className="text-black" />,
+          icon: <SiMqtt className="text-black dark:text-white" />,
         },
         {
           name: "MQTT",
-          icon: <SiMqtt className="text-black" />,
+          icon: <SiMqtt className="text-black dark:text-white" />,
         },
-        { name: "Electron", icon: <SiElectron className="text-blue-500" /> },
-        { name: "React", icon: <FaReact className="text-blue-500" /> },
-        { name: "Node", icon: <FaNodeJs className="text-green-500" /> },
-        { name: "Express", icon: <SiExpress className="text-black" /> },
+        { name: "Electron", icon: <SiElectron className="text-blue-600" /> },
+        { name: "React", icon: <FaReact className="text-blue-400" /> },
+        { name: "Node", icon: <FaNodeJs className="text-green-700" /> },
+        {
+          name: "Express",
+          icon: <SiExpress className="text-black dark:text-white" />,
+        },
       ],
       github: "123",
     },
@@ -133,17 +152,16 @@ export default function ProjectsSection({ projectsRef }) {
       hoverImage: project4Static,
       technologies: [
         {
-          name: "Wirepas",
-          icon: <SiMqtt className="text-black" />,
+          name: "C++",
+          icon: <SiCplusplus className="text-blue-500" />,
         },
         {
           name: "MQTT",
-          icon: <SiMqtt className="text-black" />,
+          icon: <SiMqtt className="text-black dark:text-white" />,
         },
-        { name: "Electron", icon: <SiElectron className="text-blue-500" /> },
-        { name: "React", icon: <FaReact className="text-blue-500" /> },
-        { name: "Node", icon: <FaNodeJs className="text-green-500" /> },
-        { name: "Express", icon: <SiExpress className="text-black" /> },
+        { name: "Arduino", icon: <SiArduino className="text-blue-500" /> },
+        { name: "Wi-Fi", icon: <FcWiFiLogo className="text-blue-800" /> },
+        { name: "Embeded", icon: <ImEmbed className="text-red-500" /> },
       ],
       github: "123",
     },
@@ -156,17 +174,18 @@ export default function ProjectsSection({ projectsRef }) {
       hoverImage: project4Static,
       technologies: [
         {
-          name: "Wirepas",
-          icon: <SiMqtt className="text-black" />,
+          name: "DiscordJS",
+          icon: <FaDiscord className="text-zinc-600" />,
         },
         {
-          name: "MQTT",
-          icon: <SiMqtt className="text-black" />,
+          name: "Node",
+          icon: <FaNodeJs className="text-green-700" />,
         },
-        { name: "Electron", icon: <SiElectron className="text-blue-500" /> },
-        { name: "React", icon: <FaReact className="text-blue-500" /> },
-        { name: "Node", icon: <FaNodeJs className="text-green-500" /> },
-        { name: "Express", icon: <SiExpress className="text-black" /> },
+        { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
+        {
+          name: "Linux",
+          icon: <DiLinux className="text-black dark:text-white" />,
+        },
       ],
       github: "123",
     },
@@ -175,6 +194,7 @@ export default function ProjectsSection({ projectsRef }) {
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
+    handleScrollToSection(projectsRef);
   };
 
   return (
@@ -214,7 +234,7 @@ export default function ProjectsSection({ projectsRef }) {
             <div className="text-md mt-4 max-w-lg flex flex-wrap gap-3">
               {selectedProject.technologies.map((tech, index) => (
                 <div
-                  className="bg-zinc-500/10 rounded-full px-3 flex items-center text-center w-fit"
+                  className="bg-zinc-500/10 rounded-full px-3 flex items-center text-center w-fit gap-1"
                   key={index}
                 >
                   {tech.icon}
@@ -275,7 +295,7 @@ export default function ProjectsSection({ projectsRef }) {
               {project.technologies.map((tech, index) => (
                 <div
                   key={index}
-                  className="bg-zinc-500/10 rounded-full px-3 flex items-center text-center w-fit"
+                  className="bg-zinc-500/10 rounded-full px-3 flex items-center text-center w-fit gap-1"
                 >
                   {tech.icon}
                   <p>{tech.name}</p>
