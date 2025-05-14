@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { FaDiscord, FaDocker, FaNodeJs, FaReact } from "react-icons/fa6";
-import project1Static from "../assets/project_1_static.png?url";
-import project2Static from "../assets/project_2_static.png?url";
-import project3Static from "../assets/project_3_static.png?url";
-import project4Static from "../assets/project_4_static.png?url";
+import ESP32Static from "../assets/ESP32Static.jpg?url";
+import IntegrationStatic from "../assets/IntegrationStatic.png?url";
+import DeviceDashboardStatic from "../assets/DeviceDashboardStatic.png?url";
+import PMSStatic from "../assets/PMSStatic.png?url";
+import StockStatic from "../assets/StockStatic.png?url";
+import DiscordStatic from "../assets/DiscordStatic.png?url";
+import WirepasStatic from "../assets/WirepasStatic.png?url";
 import { IoLogoGithub, IoLogoReact, IoLogoNodejs } from "react-icons/io5";
 import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
 import {
@@ -29,7 +32,7 @@ export default function ProjectsSection({
       title: "Property Management Platform",
       description:
         "A platform for managing self-storage properties using OpenTech APIs. Includes a dashboard for monitoring property status and analytics. Currently in use by OpenTech devlopment, QA, and support teams. **Merged with Device Monitoring Dashboard 03/25**",
-      image: project1Static,
+      image: PMSStatic,
       hoverImage:
         "https://camo.githubusercontent.com/f55bac5a5ea894c90eede9cd223cbaec2bedfaafdc684c3223ee3887c17cabef/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f76312e59326c6b505463354d4749334e6a45785a586c6e4e3239685a444d3063325a684d57566c59335578596d526e6232316f64545a774e7a4a6c626d356f626d5a6e6558493563695a6c634431324d563970626e526c636d35686246396e61575a66596e6c666157516d593351395a772f383378416b6952615a5457486a336d565a392f67697068792e676966",
       technologies: [
@@ -55,7 +58,7 @@ export default function ProjectsSection({
       title: "Device Monitoring Dashboard",
       description:
         "Dashboard for monitoring devices using OpenTech APIs. The dashboard provides real-time updates and analytics of target devices allowing for strategic support. Currently in use by OpenTech devlopment, QA, and support teams. **Merged with Property Management Platform 03/25**",
-      image: project2Static,
+      image: DeviceDashboardStatic,
       hoverImage:
         "https://camo.githubusercontent.com/f55bac5a5ea894c90eede9cd223cbaec2bedfaafdc684c3223ee3887c17cabef/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f76312e59326c6b505463354d4749334e6a45785a586c6e4e3239685a444d3063325a684d57566c59335578596d526e6232316f64545a774e7a4a6c626d356f626d5a6e6558493563695a6c634431324d563970626e526c636d35686246396e61575a66596e6c666157516d593351395a772f383378416b6952615a5457486a336d565a392f67697068792e676966",
       technologies: [
@@ -81,7 +84,7 @@ export default function ProjectsSection({
       title: "Stock Trading Platform",
       description:
         "A stock trading platform built within react the platform allows users to buy and sell stocks. The platform also provides real-time updates and analytics of target stocks allowing for strategic trading.",
-      image: project3Static,
+      image: StockStatic,
       hoverImage:
         "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGF2ZGRweHd4eWMyZmpzeGtkbnk5MnIxeHV4aG5teXZ5ZjV2Ym1ieiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TIItRRDL4b3Z8g4nND/giphy.gif",
       technologies: [
@@ -99,8 +102,7 @@ export default function ProjectsSection({
       title: "System Integrations",
       description:
         "Automation and scripting with PowerShell, Bash, and Linux. These integrations are to automate the connection between broker systems to the OpenTech APIs.",
-      image: project4Static,
-      hoverImage: project4Static,
+      image: IntegrationStatic,
       technologies: [
         {
           name: "PowerShell",
@@ -122,8 +124,7 @@ export default function ProjectsSection({
       title: "Wirepas MQTT Tooling",
       description:
         "This is local tooling for Wirepas devices. The tooling allows for the monitoring and management of Wirepas devices. The tooling is built using Electron and React.",
-      image: project4Static,
-      hoverImage: project4Static,
+      image: WirepasStatic,
       technologies: [
         {
           name: "Wirepas",
@@ -147,8 +148,7 @@ export default function ProjectsSection({
       title: "ESP32 IoT Device Firmware",
       description:
         "This is a collection of firmware for ESP32 devices. The firmware was developed using the Arduino IDE and includes libraries for MQTT, HTTP, and WebSocket communication. The firmware is designed to be used with the Wirepas Mesh network. It allows for a user to remotely control many sensors (Camera and motion) with ease.",
-      image: project4Static,
-      hoverImage: project4Static,
+      image: ESP32Static,
       technologies: [
         {
           name: "C++",
@@ -169,8 +169,7 @@ export default function ProjectsSection({
       title: "Discord Bot",
       description:
         "This is a collection of Discord bots I have created. They are all built using Node.js and the Discord.js library. The bots are designed to be modular and easy to use, with a focus on performance and reliability. They all have a set function from chat moderation to server management.",
-      image: project4Static,
-      hoverImage: project4Static,
+      image: DiscordStatic,
       technologies: [
         {
           name: "DiscordJS",
@@ -211,17 +210,21 @@ export default function ProjectsSection({
       {/* Selected Focus Screen */}
       <div className="group w-full flex flex-col lg:flex-row h-auto justify-center gap-6 my-6">
         {/* Image */}
-        <div className="relative w-full lg:w-1/2 h-64 md:h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="relative w-full lg:w-1/2 h-64 md:h-[400px] flex items-center justify-center overflow-hidden group">
           <img
             src={selectedProject.image}
             alt="Default Image"
-            className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-300 object-contain w-full h-full"
+            className={`absolute inset-0 opacity-100 transition-opacity duration-300 object-contain w-full h-full ${
+              selectedProject.hoverImage ? "group-hover:opacity-0" : ""
+            }`}
           />
-          <img
-            src={selectedProject.hoverImage}
-            alt="Hover Image"
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 object-contain w-full h-full"
-          />
+          {selectedProject.hoverImage && (
+            <img
+              src={selectedProject.hoverImage}
+              alt="Hover Image"
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 object-contain w-full h-full"
+            />
+          )}
         </div>
 
         {/* Description */}
@@ -273,17 +276,21 @@ export default function ProjectsSection({
             onClick={() => handleProjectClick(project)}
             className="group hover:bg-zinc-300 dark:hover:bg-zinc-800 p-3 hover:scale-105 rounded transition duration-300 select-none cursor-pointer"
           >
-            <div className="relative w-full h-40 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full h-40 flex items-center justify-center overflow-hidden group">
               <img
                 src={project.image}
-                alt="Default"
-                className="absolute opacity-100 transition-opacity duration-300 object-contain w-full h-full"
+                alt="Default Image"
+                className={`absolute opacity-100 transition-opacity duration-300 object-contain w-full h-full ${
+                  project.hoverImage ? "group-hover:opacity-0" : ""
+                }`}
               />
-              <img
-                src={project.hoverImage}
-                alt="Hover"
-                className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 object-contain w-full h-full"
-              />
+              {project.hoverImage && (
+                <img
+                  src={project.hoverImage}
+                  alt="Hover Image"
+                  className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 object-contain w-full h-full"
+                />
+              )}
             </div>
             <h2 className="font-bold mt-2 text-lg text-center">
               {project.title}

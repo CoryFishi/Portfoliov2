@@ -11,6 +11,64 @@ import { FcLinux } from "react-icons/fc";
 import { TbBrandPowershell } from "react-icons/tb";
 
 export default function AboutSection({ aboutRef }) {
+  const skills = [
+    {
+      icon: <IoLogoReact className="text-blue-500" />,
+      label: "React",
+      proficiency: "2+ Years",
+    },
+    {
+      icon: <IoLogoJavascript className="text-yellow-500" />,
+      label: "JavaScript",
+      proficiency: "4+ Years",
+    },
+    {
+      icon: <IoLogoPython className="text-blue-500" />,
+      label: "Python",
+      proficiency: "2+ Years",
+    },
+    {
+      icon: <FaJava className="text-red-500" />,
+      label: "Java",
+      proficiency: "1+ Years",
+    },
+    {
+      icon: <IoLogoGithub className="text-black dark:text-white" />,
+      label: "GitHub",
+      proficiency: "2+ Years",
+    },
+    {
+      icon: <IoLogoNodejs className="text-green-500" />,
+      label: "Node JS",
+      proficiency: "3+ Years",
+    },
+    {
+      icon: <SiExpress className="text-black dark:text-white" />,
+      label: "Express",
+      proficiency: "3+ Years",
+    },
+    {
+      icon: <FaGitAlt className="text-orange-500" />,
+      label: "Git",
+      proficiency: "2+ Years",
+    },
+    {
+      icon: <SiNextdotjs className="text-black dark:text-white" />,
+      label: "Next JS",
+      proficiency: "2+ Years",
+    },
+    {
+      icon: <TbBrandPowershell className="text-blue-500" />,
+      label: "PowerShell",
+      proficiency: "2+ Years",
+    },
+    { icon: <FcLinux />, label: "Linux", proficiency: "2+ Years" },
+    {
+      icon: <FaGolang className="text-teal-600" />,
+      label: "Golang",
+      proficiency: "1+ Years",
+    },
+  ];
   return (
     <div
       ref={aboutRef}
@@ -40,53 +98,19 @@ export default function AboutSection({ aboutRef }) {
               My Skills
             </h2>
           </div>
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-5 text-5xl md:text-7xl lg:text-8xl">
-            {[
-              {
-                icon: <IoLogoReact className="text-blue-500" />,
-                label: "React",
-              },
-              {
-                icon: <IoLogoJavascript className="text-yellow-500" />,
-                label: "JavaScript",
-              },
-              {
-                icon: <IoLogoPython className="text-blue-500" />,
-                label: "Python",
-              },
-              { icon: <FaJava className="text-red-500" />, label: "Java" },
-              {
-                icon: <IoLogoGithub className="text-black dark:text-white" />,
-                label: "GitHub",
-              },
-              {
-                icon: <IoLogoNodejs className="text-green-500" />,
-                label: "Node JS",
-              },
-              {
-                icon: <SiExpress className="text-black dark:text-white" />,
-                label: "Express",
-              },
-              { icon: <FaGitAlt className="text-orange-500" />, label: "Git" },
-              {
-                icon: <SiNextdotjs className="text-black dark:text-white" />,
-                label: "Next JS",
-              },
-              {
-                icon: <TbBrandPowershell className="text-blue-500" />,
-                label: "PowerShell",
-              },
-              { icon: <FcLinux />, label: "Linux" },
-              { icon: <FaGolang className="text-teal-600" />, label: "Golang" },
-            ].map(({ icon, label }, index) => (
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-5 text-5xl md:text-7xl lg:text-8xl relative overflow-visible z-0">
+            {skills.map(({ icon, label, proficiency }, index) => (
               <div
                 key={index}
-                className="w-full flex flex-col items-center hover:scale-105 rounded transition duration-300 ease-in-out transform select-none"
+                className="group relative w-full flex flex-col items-center hover:scale-105 rounded transition duration-300 ease-in-out transform select-none"
               >
                 {icon}
                 <h2 className="text-base md:text-lg lg:text-2xl mt-2">
                   {label}
                 </h2>
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none bg-gray-800 text-white text-sm px-3 py-1 rounded shadow-lg transition-all duration-300 whitespace-nowrap z-20">
+                  Proficient - {proficiency}
+                </div>
               </div>
             ))}
           </div>
