@@ -33,7 +33,7 @@ export default function ContactSection({ contactRef }) {
 
   const getLabelClasses = (value) =>
     `absolute left-3 ${
-      value ? "-top-3 text-sm text-teal-600" : "top-3 text-base text-gray-400"
+      value ? "-top-3 text-sm text-teal-600" : "top-3 text-base text-zinc-400"
     } transition-all bg-white dark:bg-darkNavSecondary px-1`;
   return (
     <div
@@ -49,7 +49,7 @@ export default function ContactSection({ contactRef }) {
               <input
                 type="text"
                 id="name"
-                className="peer p-3 border rounded-md w-full dark:bg-darkNavSecondary dark:border-border focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="peer p-3 border rounded-md w-full dark:bg-darkNavSecondary dark:border-border focus:outline-none focus:ring-2 focus:ring-teal-600"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -62,7 +62,7 @@ export default function ContactSection({ contactRef }) {
               <input
                 type="email"
                 id="email"
-                className="peer p-3 border rounded-md w-full dark:bg-darkNavSecondary dark:border-border focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="peer p-3 border rounded-md w-full dark:bg-darkNavSecondary dark:border-border focus:outline-none focus:ring-2 focus:ring-teal-600"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -75,7 +75,7 @@ export default function ContactSection({ contactRef }) {
               <textarea
                 id="message"
                 rows="5"
-                className="peer p-3 border rounded-md w-full dark:bg-darkNavSecondary dark:border-border focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none"
+                className="peer p-3 border rounded-md w-full dark:bg-darkNavSecondary dark:border-border focus:outline-none focus:ring-2 focus:ring-teal-600 resize-none"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
@@ -86,7 +86,7 @@ export default function ContactSection({ contactRef }) {
 
             <button
               type="submit"
-              className="p-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+              className="p-3 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition"
             >
               Send Message
             </button>
@@ -105,7 +105,7 @@ export default function ContactSection({ contactRef }) {
               href="https://github.com/coryfishi"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-600"
+              className="hover:text-teal-600"
             >
               <FaGithub />
             </a>
@@ -113,13 +113,13 @@ export default function ContactSection({ contactRef }) {
               href="https://linkedin.com/in/CoryFishburn"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-600"
+              className="hover:text-teal-600"
             >
               <FaLinkedin />
             </a>
             <a
               href="mailto:coryfishburnjr@gmail.com"
-              className="hover:text-blue-600"
+              className="hover:text-teal-600"
             >
               <FaEnvelope />
             </a>

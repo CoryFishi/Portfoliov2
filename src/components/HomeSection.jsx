@@ -19,9 +19,8 @@ export default function HomeSection({
             <h1>Hi, I'm Cory.</h1>
           </div>
           <p className="text-xl md:text-2xl lg:text-3xl max-w-[450px]">
-            I'm an <span className="font-bold">automation engineer</span>,
-            aspiring entrepreneur, and{" "}
-            <span className="font-bold">Recent Graduate</span>
+            I'm a <span className="font-bold">software engineer</span>, aspiring
+            entrepreneur, and <span className="font-bold">Recent Graduate</span>
           </p>
           <div className="w-full text-left mt-6 md:mt-10">
             <button
@@ -46,7 +45,7 @@ export default function HomeSection({
       </div>
 
       <div
-        className="animate-bounce mt-10 md:mt-20 text-3xl md:text-4xl text-gray-700 dark:text-white hover:cursor-pointer"
+        className="animate-bounce mt-10 md:mt-20 text-3xl md:text-4xl text-zinc-700 dark:text-white hover:cursor-pointer"
         onClick={() => handleScrollToSection(aboutRef)}
       >
         <AiOutlineArrowDown />

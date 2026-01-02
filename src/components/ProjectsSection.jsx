@@ -51,7 +51,7 @@ export default function ProjectsSection({
         },
       ],
       github: "https://github.com/CoryFishi/MockPMS",
-      live: "https://propertymanager-dev.netlify.app/",
+      live: "https://propertymanager.netlify.app/",
     },
     {
       id: 2,
@@ -77,7 +77,7 @@ export default function ProjectsSection({
         },
       ],
       github: "https://github.com/CoryFishi/MockPMS",
-      live: "https://propertymanager-dev.netlify.app/",
+      live: "https://propertymanager.netlify.app/",
     },
     {
       id: 3,
@@ -238,7 +238,7 @@ export default function ProjectsSection({
           <div className="text-sm md:text-md mt-4 flex flex-wrap gap-3">
             {selectedProject.technologies.map((tech, index) => (
               <div
-                className="bg-zinc-500/10 rounded-full px-3 flex items-center gap-1"
+                className="bg-zinc-500/10 rounded-full px-3 py-1 flex items-center gap-1"
                 key={index}
               >
                 {tech.icon}
@@ -249,15 +249,15 @@ export default function ProjectsSection({
           <div className="mt-5 flex gap-3">
             {selectedProject.github && (
               <button
-                className="px-3 flex items-center gap-1 text-md underline hover:bg-zinc-300 rounded-lg text-blue-500"
+                className="px-3 py-1 flex items-center gap-1 text-md underline hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-full text-blue-500"
                 onClick={() => window.open(selectedProject.github, "_blank")}
               >
-                <IoLogoGithub className="text-black" /> GitHub
+                <IoLogoGithub className="text-black dark:text-white" /> GitHub
               </button>
             )}
             {selectedProject.live && (
               <button
-                className="px-3 flex items-center gap-1 text-md underline hover:bg-zinc-300 rounded-lg text-blue-500"
+                className="px-3 py-1 flex items-center gap-1 text-md underline hover:bg-zinc-300 rounded-full dark:hover:bg-zinc-800 text-blue-500"
                 onClick={() => window.open(selectedProject.live, "_blank")}
               >
                 <TbPlayerRecordFilled className="text-red-600 animate-pulse" />{" "}
@@ -274,7 +274,7 @@ export default function ProjectsSection({
           <div
             key={project.id}
             onClick={() => handleProjectClick(project)}
-            className="group hover:bg-zinc-300 dark:hover:bg-zinc-800 p-3 hover:scale-105 rounded transition duration-300 select-none cursor-pointer"
+            className="group hover:bg-zinc-300 dark:hover:bg-zinc-800 p-3 hover:scale-105 rounded-lg transition duration-300 select-none cursor-pointer"
           >
             <div className="relative w-full h-40 flex items-center justify-center overflow-hidden group">
               <img
